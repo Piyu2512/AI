@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartMart | Checkout</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    margin:0;
+    background:#fffaf7;
+}
+
+header{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffc477;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+}
+
+.container{
+    max-width:1100px;
+    margin:50px auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#123d73;
+    margin-bottom:35px;
+}
+
+.checkout-box{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #0001;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    color:#123d73;
+    margin-bottom:8px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    border:2px solid #eee;
+    border-radius:10px;
+    outline:none;
+}
+
+input:focus,textarea:focus,select:focus{
+    border-color:#ef2868;
+}
+
+.order{
+    margin-top:30px;
+    padding:25px;
+    background:#fff0f5;
+    border-radius:20px;
+}
+
+.order h2{
+    color:#123d73;
+}
+
+.total{
+    font-size:25px;
+    font-weight:bold;
+    color:#ef2868;
+    margin-top:15px;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ef2868;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#123d73;
+}
+
+@media(max-width:700px){
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Smart<span>Mart</span> 🛍️
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart</a>
+<a href="socialmedia.html">Social Media</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>🛍️ Checkout</h1>
+
+<div class="checkout-box">
+
+<form onsubmit="placeOrder(event)">
+
+<div class="form-grid">
+
+<div>
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+</div>
+
+<div>
+<label>Mobile Number</label>
+<input type="tel" id="phone" placeholder="Enter mobile number" required>
+</div>
+
+<div class="full">
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter email" required>
+</div>
+
+<div class="full">
+<label>Address</label>
+<textarea id="address" rows="4"
+placeholder="Enter complete delivery address"
+required></textarea>
+</div>
+
+<div>
+<label>City</label>
+<input type="text" id="city" placeholder="City" required>
+</div>
+
+<div>
+<label>PIN Code</label>
+<input type="text" id="pin" placeholder="PIN Code" required>
+</div>
+
+<div class="full">
+<label>Payment Method</label>
+
+<select id="payment" required>
+
+<option value="">Select Payment Method</option>
+<option>Cash on Delivery</option>
+<option>UPI</option>
+<option>Debit/Credit Card</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="order">
+
+<h2>Order Summary</h2>
+
+<p>Total Items: <span id="items">0</span></p>
+
+<div class="total">
+Total Amount: ₹<span id="total">0</span>
+</div>
+
+</div>
+
+<button type="submit">
+Place Order 🎉
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+let cart=JSON.parse(localStorage.getItem("smartCart")) || [];
+
+let total=0;
+
+cart.forEach(item=>{
+    total += item.price;
+});
+
+document.getElementById("items").innerText=cart.length;
+document.getElementById("total").innerText=total;
+
+function placeOrder(event){
+
+    event.preventDefault();
+
+    if(cart.length===0){
+
+        alert("Your cart is empty!");
+
+        window.location.href="products.html";
+
+        return;
+    }
+
+    let order={
+        name:document.getElementById("name").value,
+        phone:document.getElementById("phone").value,
+        email:document.getElementById("email").value,
+        address:document.getElementById("address").value,
+        city:document.getElementById("city").value,
+        pin:document.getElementById("pin").value,
+        payment:document.getElementById("payment").value,
+        total:total
+    };
+
+    localStorage.setItem(
+        "smartOrder",
+        JSON.stringify(order)
+    );
+
+    localStorage.removeItem("smartCart");
+
+    window.location.href="thankyou.html";
+}
+
+</script>
+
+</body>
+</html>

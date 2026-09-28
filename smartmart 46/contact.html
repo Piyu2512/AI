@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartMart | Contact</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fffaf7;
+}
+
+header{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffc477;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+.container{
+    padding:70px 8%;
+}
+
+.title{
+    text-align:center;
+    color:#123d73;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.info{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    color:white;
+    padding:40px;
+    border-radius:25px;
+}
+
+.info h2{
+    font-size:32px;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    background:#ffffff20;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+}
+
+.contact-item h3{
+    margin-bottom:8px;
+}
+
+.form{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #0001;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#123d73;
+    font-weight:bold;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    border:2px solid #eee;
+    border-radius:10px;
+    margin-bottom:20px;
+    outline:none;
+}
+
+input:focus,textarea:focus{
+    border-color:#ef2868;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:#ef2868;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#123d73;
+}
+
+footer{
+    background:#123d73;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:800px){
+    nav{
+        display:none;
+    }
+
+    .contact{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Smart<span>Mart</span> 🛍️
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+<a href="cart.html">🛒 Cart</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1 class="title">Contact Us 📞</h1>
+
+<div class="contact">
+
+<div class="info">
+
+<h2>Get In Touch</h2>
+
+<div class="contact-item">
+<h3>📞 Phone</h3>
+<p>+91 98765 43210</p>
+</div>
+
+<div class="contact-item">
+<h3>📧 Email</h3>
+<p>support@smartmart.com</p>
+</div>
+
+<div class="contact-item">
+<h3>📍 Address</h3>
+<p>SmartMart Shopping Center, India</p>
+</div>
+
+<div class="contact-item">
+<h3>🕐 Working Hours</h3>
+<p>Monday - Saturday: 9 AM - 8 PM</p>
+</div>
+
+</div>
+
+<div class="form">
+
+<form onsubmit="sendMessage(event)">
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email" required>
+
+<label>Subject</label>
+<input type="text" id="subject" placeholder="Enter subject" required>
+
+<label>Message</label>
+<textarea id="message" rows="6"
+placeholder="Write your message..." required></textarea>
+
+<button type="submit">
+Send Message ✉️
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>SmartMart 🛍️</h2>
+<p>Shop Smart. Live Better.</p>
+<p>© 2026 SmartMart. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    let name=document.getElementById("name").value;
+
+    alert(
+        "Thank you "+name+"! ❤️\n\n"+
+        "Your message has been submitted successfully."
+    );
+
+    document.querySelector("form").reset();
+}
+
+</script>
+
+</body>
+</html>

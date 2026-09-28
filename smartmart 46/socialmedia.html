@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartMart | Social Media</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fffaf7;
+    color:#333;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffc477;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 9px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffc477;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    padding:80px 8%;
+    text-align:center;
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe0c7
+        );
+}
+
+.hero-icon{
+    width:100px;
+    height:100px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #123d73,
+        #ef2868
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:50px;
+    color:white;
+
+    box-shadow:0 15px 35px #0002;
+}
+
+.hero h1{
+    margin-top:25px;
+    color:#123d73;
+    font-size:45px;
+}
+
+.hero h1 span{
+    color:#ef2868;
+}
+
+.hero p{
+    max-width:700px;
+    margin:18px auto 0;
+    font-size:18px;
+    line-height:1.7;
+    color:#555;
+}
+
+
+/* =========================
+   SOCIAL MEDIA SECTION
+========================= */
+
+.social-section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    color:#123d73;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.section-title span{
+    color:#ef2868;
+}
+
+.section-description{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 45px;
+    color:#666;
+    line-height:1.6;
+}
+
+
+/* =========================
+   SOCIAL CARDS
+========================= */
+
+.social-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+}
+
+.social-card{
+    background:white;
+    border-radius:25px;
+    padding:35px 25px;
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px #0001;
+
+    transition:0.3s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.social-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:linear-gradient(
+        90deg,
+        #123d73,
+        #ef2868,
+        #ffc477
+    );
+}
+
+.social-card:hover{
+    transform:translateY(-10px);
+    box-shadow:
+        0 18px 40px #0002;
+}
+
+
+/* ICON */
+
+.social-icon{
+    width:90px;
+    height:90px;
+
+    margin:10px auto 20px;
+
+    border-radius:25px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:48px;
+
+    color:white;
+
+    box-shadow:0 8px 20px #0002;
+}
+
+.instagram{
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.twitter{
+    background:#111;
+}
+
+.youtube{
+    background:#ff0000;
+}
+
+.linkedin{
+    background:#0a66c2;
+}
+
+.pinterest{
+    background:#e60023;
+}
+
+
+/* CARD TEXT */
+
+.social-card h2{
+    color:#123d73;
+    margin-bottom:12px;
+}
+
+.social-card p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+
+/* FOLLOW BUTTON */
+
+.follow-btn{
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:#ef2868;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.follow-btn:hover{
+    background:#123d73;
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOLLOW US SECTION
+========================= */
+
+.follow-section{
+    padding:70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123d73,
+            #ef2868
+        );
+
+    text-align:center;
+
+    color:white;
+}
+
+.follow-section h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.follow-section p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   SOCIAL ICON BUTTONS
+========================= */
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    transform:
+        translateY(-7px)
+        scale(1.08);
+}
+
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter{
+    padding:60px 8%;
+    text-align:center;
+    background:#fff0f5;
+}
+
+.newsletter h2{
+    color:#123d73;
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.newsletter p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.newsletter-form{
+    max-width:600px;
+    margin:auto;
+
+    display:flex;
+
+    background:white;
+
+    padding:8px;
+
+    border-radius:40px;
+
+    box-shadow:0 8px 25px #0001;
+}
+
+.newsletter-form input{
+    flex:1;
+
+    border:none;
+    outline:none;
+
+    padding:14px 20px;
+
+    font-size:15px;
+
+    border-radius:30px;
+}
+
+.newsletter-form button{
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    background:#ef2868;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.newsletter-form button:hover{
+    background:#123d73;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#123d73;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer h2{
+    margin-bottom:8px;
+}
+
+footer p{
+    margin:6px 0;
+    color:#ddd;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.footer-links a:hover{
+    color:#ffc477;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .social-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .social-grid{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+        background:transparent;
+        box-shadow:none;
+        gap:10px;
+    }
+
+    .newsletter-form input{
+        background:white;
+    }
+
+    .newsletter-form button{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="logo">
+Smart<span>Mart</span> 🛍️
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="socialmedia.html">Social Media</a>
+
+<a href="login.html">Login</a>
+
+<a href="cart.html">🛒 Cart</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-icon">
+📱
+</div>
+
+<h1>
+Connect With <span>SmartMart</span>
+</h1>
+
+<p>
+Follow SmartMart on social media to discover
+new products, exciting offers, shopping tips,
+latest updates and special discounts.
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
+
+<section class="social-section">
+
+<h2 class="section-title">
+Our <span>Social Media</span>
+</h2>
+
+<p class="section-description">
+Stay connected with SmartMart and never miss
+our latest products, offers and exciting updates.
+</p>
+
+
+<div class="social-grid">
+
+
+<!-- INSTAGRAM -->
+
+<div class="social-card">
+
+<div class="social-icon instagram">
+📸
+</div>
+
+<h2>Instagram</h2>
+
+<p>
+Follow us for product photos, fashion inspiration,
+offers, reels and latest SmartMart updates.
+</p>
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+class="follow-btn"
+>
+Follow Us
+</a>
+
+</div>
+
+
+
+<!-- FACEBOOK -->
+
+<div class="social-card">
+
+<div class="social-icon facebook">
+f
+</div>
+
+<h2>Facebook</h2>
+
+<p>
+Join our Facebook community for shopping news,
+announcements, offers and customer updates.
+</p>
+
+<a
+href="https://www.facebook.com/"
+target="_blank"
+class="follow-btn"
+>
+Follow Us
+</a>
+
+</div>
+
+
+
+<!-- TWITTER -->
+
+<div class="social-card">
+
+<div class="social-icon twitter">
+𝕏
+</div>
+
+<h2>Twitter / X</h2>
+
+<p>
+Get quick SmartMart announcements, new arrivals,
+offers and shopping updates.
+</p>
+
+<a
+href="https://x.com/"
+target="_blank"
+class="follow-btn"
+>
+Follow Us
+</a>
+
+</div>
+
+
+
+<!-- YOUTUBE -->
+
+<div class="social-card">
+
+<div class="social-icon youtube">
+▶
+</div>
+
+<h2>YouTube</h2>
+
+<p>
+Watch product reviews, shopping guides,
+unboxing videos and SmartMart updates.
+</p>
+
+<a
+href="https://www.youtube.com/"
+target="_blank"
+class="follow-btn"
+>
+Subscribe
+</a>
+
+</div>
+
+
+
+<!-- LINKEDIN -->
+
+<div class="social-card">
+
+<div class="social-icon linkedin">
+in
+</div>
+
+<h2>LinkedIn</h2>
+
+<p>
+Follow SmartMart for company news,
+business updates and professional information.
+</p>
+
+<a
+href="https://www.linkedin.com/"
+target="_blank"
+class="follow-btn"
+>
+Follow Us
+</a>
+
+</div>
+
+
+
+<!-- PINTEREST -->
+
+<div class="social-card">
+
+<div class="social-icon pinterest">
+P
+</div>
+
+<h2>Pinterest</h2>
+
+<p>
+Explore shopping inspiration, home decor,
+fashion ideas and product collections.
+</p>
+
+<a
+href="https://www.pinterest.com/"
+target="_blank"
+class="follow-btn"
+>
+Follow Us
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOLLOW SECTION
+========================= -->
+
+<section class="follow-section">
+
+<h2>Let's Stay Connected! ❤️</h2>
+
+<p>
+Follow SmartMart on your favorite social platforms.
+</p>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+title="Instagram"
+>
+📸
+</a>
+
+<a
+href="https://www.facebook.com/"
+target="_blank"
+title="Facebook"
+>
+f
+</a>
+
+<a
+href="https://x.com/"
+target="_blank"
+title="Twitter / X"
+>
+𝕏
+</a>
+
+<a
+href="https://www.youtube.com/"
+target="_blank"
+title="YouTube"
+>
+▶
+</a>
+
+<a
+href="https://www.linkedin.com/"
+target="_blank"
+title="LinkedIn"
+>
+in
+</a>
+
+<a
+href="https://www.pinterest.com/"
+target="_blank"
+title="Pinterest"
+>
+P
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+
+<section class="newsletter">
+
+<h2>📧 Get SmartMart Updates</h2>
+
+<p>
+Subscribe to receive new product alerts,
+exclusive offers and shopping updates.
+</p>
+
+<form
+class="newsletter-form"
+onsubmit="subscribeUser(event)"
+>
+
+<input
+type="email"
+id="subscribeEmail"
+placeholder="Enter your email address"
+required
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<h2>SmartMart 🛍️</h2>
+
+<p>
+Shop Smart. Live Better.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="socialmedia.html">Social Media</a>
+
+</div>
+
+<p>
+© 2026 SmartMart. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function subscribeUser(event){
+
+    event.preventDefault();
+
+    let email =
+        document.getElementById(
+            "subscribeEmail"
+        ).value;
+
+    alert(
+        "Thank you! ❤️\n\n" +
+        email +
+        "\n\n" +
+        "You are now subscribed to SmartMart updates."
+    );
+
+    document
+        .getElementById("subscribeEmail")
+        .value="";
+}
+
+</script>
+
+
+</body>
+</html>

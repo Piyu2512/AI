@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartMart | About Us</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fffaf7;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffc477;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc477;
+}
+
+.hero{
+    padding:70px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#ffe8d6,#ffdce8);
+}
+
+.hero h1{
+    color:#123d73;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#ef2868;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    max-width:750px;
+    margin:auto;
+}
+
+.about{
+    padding:70px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img{
+    background:linear-gradient(135deg,#ffc477,#ef2868);
+    height:350px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:130px;
+}
+
+.about-text h2{
+    color:#123d73;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.point{
+    background:#fff0f5;
+    padding:20px;
+    border-radius:15px;
+}
+
+.point h3{
+    color:#ef2868;
+    margin-bottom:7px;
+}
+
+.stats{
+    background:#fff0f5;
+    padding:60px 8%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    text-align:center;
+}
+
+.stat h2{
+    color:#ef2868;
+    font-size:35px;
+}
+
+.stat p{
+    color:#123d73;
+    font-weight:bold;
+}
+
+footer{
+    background:#123d73;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:800px){
+    nav{
+        display:none;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:500px){
+    .points,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Smart<span>Mart</span> 🛍️
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+<a href="cart.html">🛒 Cart</a>
+<a href="socialmedia.html">Social Media</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>About <span>SmartMart</span></h1>
+
+<p>
+SmartMart is your trusted online shopping destination where
+quality, affordability and convenience come together.
+</p>
+
+</section>
+
+<section class="about">
+
+<div class="about-img">
+🛍️
+</div>
+
+<div class="about-text">
+
+<h2>Shop Smart. Live Better.</h2>
+
+<p>
+Welcome to SmartMart! We believe shopping should be simple,
+comfortable and enjoyable.
+</p>
+
+<p>
+Our goal is to provide customers with a wide range of
+fashion, electronics, beauty and home products at affordable prices.
+</p>
+
+<p>
+We focus on quality products, easy shopping and customer satisfaction.
+</p>
+
+<div class="points">
+
+<div class="point">
+<h3>⭐ Quality</h3>
+<p>Carefully selected products.</p>
+</div>
+
+<div class="point">
+<h3>💰 Affordable</h3>
+<p>Great products at great prices.</p>
+</div>
+
+<div class="point">
+<h3>🚚 Fast Delivery</h3>
+<p>Quick and reliable delivery.</p>
+</div>
+
+<div class="point">
+<h3>❤️ Customer First</h3>
+<p>Your happiness matters to us.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>500+</h2>
+<p>Products</p>
+</div>
+
+<div class="stat">
+<h2>10K+</h2>
+<p>Customers</p>
+</div>
+
+<div class="stat">
+<h2>25+</h2>
+<p>Categories</p>
+</div>
+
+<div class="stat">
+<h2>4.8★</h2>
+<p>Customer Rating</p>
+</div>
+
+</section>
+
+<footer>
+
+<h2>SmartMart 🛍️</h2>
+<p>Shop Smart. Live Better.</p>
+<p>© 2026 SmartMart. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

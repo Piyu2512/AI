@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartMart | Home</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fffaf7;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#123d73,#ef2868);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffc477;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc477;
+}
+
+.hero{
+    min-height:600px;
+    padding:80px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:linear-gradient(135deg,#fff1e6,#ffdce8);
+}
+
+.hero-text{
+    max-width:550px;
+}
+
+.hero h1{
+    font-size:55px;
+    color:#123d73;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#ef2868;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#ef2868;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.btn:hover{
+    background:#123d73;
+}
+
+.hero-card{
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ffc477,#ef2868);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:130px;
+    box-shadow:0 20px 40px #0002;
+}
+
+section{
+    padding:70px 8%;
+}
+
+.title{
+    text-align:center;
+    color:#123d73;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.category{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 8px 25px #0001;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+}
+
+.category div{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.category h3{
+    color:#123d73;
+}
+
+.features{
+    background:#fff0f5;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.feature{
+    text-align:center;
+    padding:30px;
+}
+
+.feature-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+footer{
+    background:#123d73;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:800px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .categories,
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+@media(max-width:500px){
+    .categories,
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        width:250px;
+        height:250px;
+        font-size:90px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Smart<span>Mart</span> 🛍️</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">🛒 Cart</a>
+        <a href="socialmedia.html">Social Media</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Shop <span>Smart.</span><br>Live Better.</h1>
+
+        <p>
+            Welcome to SmartMart — your one-stop online shopping destination
+            for quality products at amazing prices.
+        </p>
+
+        <a href="products.html" class="btn">Shop Now 🛍️</a>
+        <a href="about.html" class="btn">Explore More</a>
+    </div>
+
+    <div class="hero-card">
+        🛒
+    </div>
+</section>
+
+<section>
+    <h2 class="title">Shop By Category</h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div>👗</div>
+            <h3>Fashion</h3>
+            <p>Trendy clothes & accessories</p>
+        </div>
+
+        <div class="category">
+            <div>📱</div>
+            <h3>Electronics</h3>
+            <p>Smart gadgets & devices</p>
+        </div>
+
+        <div class="category">
+            <div>💄</div>
+            <h3>Beauty</h3>
+            <p>Beauty & personal care</p>
+        </div>
+
+        <div class="category">
+            <div>🏠</div>
+            <h3>Home</h3>
+            <p>Decor & household items</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">⭐</div>
+        <h3>Quality Products</h3>
+        <p>Best quality products for you.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">💰</div>
+        <h3>Best Prices</h3>
+        <p>Affordable prices every day.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Fast Delivery</h3>
+        <p>Quick and secure delivery.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">❤️</div>
+        <h3>Happy Customers</h3>
+        <p>Your satisfaction is our priority.</p>
+    </div>
+
+</section>
+
+<footer>
+    <h2>SmartMart 🛍️</h2>
+    <p>Shop Smart. Live Better.</p>
+    <p>© 2026 SmartMart. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
